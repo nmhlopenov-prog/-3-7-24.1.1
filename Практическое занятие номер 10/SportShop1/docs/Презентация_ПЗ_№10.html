@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Презентация. СпортТовары. Тур Г.К.</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Segoe UI", "Times New Roman", sans-serif;
+    background: #1a1a1a;
+    color: #000;
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .slide {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 60px 100px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7f0 100%);
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+  }
+
+  .slide.active { display: flex; }
+
+  .slide h1 {
+    font-size: 64px;
+    color: #2e7d32;
+    margin-bottom: 30px;
+    border-bottom: 6px solid #d9ead3;
+    padding-bottom: 20px;
+  }
+
+  .slide h2 {
+    font-size: 48px;
+    color: #2e7d32;
+    margin-bottom: 40px;
+    border-bottom: 4px solid #d9ead3;
+    padding-bottom: 15px;
+  }
+
+  .slide h3 {
+    font-size: 32px;
+    color: #1b5e20;
+    margin: 20px 0 15px;
+  }
+
+  .slide p {
+    font-size: 26px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    color: #222;
+  }
+
+  .slide ul, .slide ol {
+    font-size: 28px;
+    line-height: 1.8;
+    margin-left: 60px;
+    color: #222;
+  }
+
+  .slide li { margin-bottom: 12px; }
+  .slide li::marker { color: #2e7d32; font-weight: bold; }
+
+  .title-slide {
+    text-align: center;
+    background: linear-gradient(135deg, #d9ead3 0%, #fff2cc 100%);
+  }
+
+  .title-slide h1 {
+    font-size: 88px;
+    border: none;
+    color: #1b5e20;
+    margin-bottom: 40px;
+  }
+
+  .title-slide p {
+    font-size: 32px;
+    text-align: center;
+    color: #2e7d32;
+  }
+
+  .title-slide .author {
+    margin-top: 60px;
+    font-size: 28px;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  .code-block {
+    font-family: "Courier New", monospace;
+    background: #f4f4f4;
+    border-left: 6px solid #2e7d32;
+    padding: 25px 35px;
+    font-size: 24px;
+    line-height: 1.6;
+    white-space: pre;
+    margin: 20px 0;
+    color: #222;
+    border-radius: 4px;
+    overflow-x: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 20px 0;
+    font-size: 22px;
+  }
+
+  th {
+    background: #d9ead3;
+    border: 2px solid #2e7d32;
+    padding: 12px 18px;
+    text-align: center;
+    font-weight: bold;
+    color: #1b5e20;
+  }
+
+  td {
+    border: 1px solid #888;
+    padding: 10px 16px;
+    background: #fff;
+  }
+
+  td:first-child { background: #fff2cc; font-weight: 500; }
+
+  .slide-number {
+    position: absolute;
+    bottom: 25px;
+    left: 40px;
+    font-size: 20px;
+    color: #888;
+    font-weight: bold;
+  }
+
+  .nav-hint {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: #aaa;
+  }
+
+  .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    background: #2e7d32;
+    transition: width 0.3s;
+    z-index: 100;
+    width: 0;
+  }
+
+  .arch-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+  }
+
+  .arch-box {
+    background: #d9ead3;
+    border: 3px solid #2e7d32;
+    border-radius: 12px;
+    padding: 25px 35px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1b5e20;
+    text-align: center;
+    min-width: 180px;
+  }
+
+  .arch-box.small {
+    background: #fff2cc;
+    font-size: 20px;
+    padding: 18px 25px;
+    min-width: 140px;
+  }
+
+  .arch-arrow {
+    font-size: 40px;
+    color: #2e7d32;
+    font-weight: bold;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+  }
+
+  .col-box {
+    background: #f9fdf9;
+    border: 2px solid #d9ead3;
+    border-radius: 10px;
+    padding: 25px;
+  }
+
+  .col-box h3 { margin-top: 0; }
+
+  @media print {
+    body { overflow: visible; background: #fff; }
+    .slide {
+      display: flex !important;
+      page-break-after: always;
+      width: 100%;
+      height: 100vh;
+    }
+    .nav-hint, .progress { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- ========== СЛАЙД 1 ========== -->
+<div class="slide title-slide active">
+  <h1>СпортТовары</h1>
+  <p><b>Система управления магазином спортивных товаров</b></p>
+  <div class="author">
+    <p><b>Автор:</b> Тур Глеб Константинович</p>
+    <p><b>Группа:</b> 3ИП-7-24</p>
+    <p><b>Руководитель:</b> Наседкин М.Н.</p>
+    <p>2026 г.</p>
+  </div>
+  <div class="slide-number">1 / 7</div>
+  <div class="nav-hint">→ далее &nbsp;|&nbsp; ← назад</div>
+</div>
+
+<!-- ========== СЛАЙД 2 ========== -->
+<div class="slide">
+  <h2>Цель и задачи проекта</h2>
+
+  <h3>Цель</h3>
+  <p>Разработать консольное приложение на Python для управления магазином спортивных товаров.</p>
+
+  <h3>Задачи</h3>
+  <ul>
+    <li>Реализовать каталог товаров</li>
+    <li>Реализовать корзину покупателя</li>
+    <li>Реализовать оформление заказов</li>
+    <li>Реализовать аналитику продаж</li>
+    <li>Написать модульные тесты (unittest)</li>
+    <li>Оформить документацию в Markdown</li>
+  </ul>
+
+  <div class="slide-number">2 / 7</div>
+</div>
+
+<!-- ========== СЛАЙД 3 ========== -->
+<div class="slide">
+  <h2>Архитектура приложения</h2>
+
+  <p>Модульная архитектура, данные в SQLite / JSON:</p>
+
+  <div class="arch-diagram">
+    <div class="arch-box">main.py</div>
+    <div class="arch-arrow">→</div>
+    <div class="arch-box">src/</div>
+  </div>
+
+  <div class="arch-diagram">
+    <div class="arch-box small">catalog.py</div>
+    <div class="arch-box small">cart.py</div>
+    <div class="arch-box small">orders.py</div>
+    <div class="arch-box small">analytics.py</div>
+    <div class="arch-box small">storage.py</div>
+  </div>
+
+  <table style="margin-top: 30px;">
+    <tr><th>Модуль</th><th>Назначение</th></tr>
+    <tr><td>catalog.py</td><td>Работа с каталогом товаров</td></tr>
+    <tr><td>cart.py</td><td>Управление корзиной</td></tr>
+    <tr><td>orders.py</td><td>Оформление и хранение заказов</td></tr>
+    <tr><td>analytics.py</td><td>Аналитика продаж</td></tr>
+    <tr><td>storage.py</td><td>Сохранение и загрузка данных</td></tr>
+  </table>
+
+  <div class="slide-number">3 / 7</div>
+</div>
+
+<!-- ========== СЛАЙД 4 ========== -->
+<div class="slide">
+  <h2>Основные функции</h2>
+
+  <div class="two-col">
+    <div class="col-box">
+      <h3>📦 Каталог</h3>
+      <ul style="font-size: 22px; margin-left: 30px;">
+        <li>Просмотр всех товаров</li>
+        <li>Поиск по ID</li>
+        <li>Добавление товара</li>
+        <li>Товары с низким остатком</li>
+      </ul>
+    </div>
+
+    <div class="col-box">
+      <h3>🛒 Корзина</h3>
+      <ul style="font-size: 22px; margin-left: 30px;">
+        <li>Добавление товара</li>
+        <li>Удаление товара</li>
+        <li>Подсчёт суммы</li>
+      </ul>
+    </div>
+
+    <div class="col-box">
+      <h3>📋 Заказы</h3>
+      <ul style="font-size: 22px; margin-left: 30px;">
+        <li>Создание заказа</li>
+        <li>Просмотр по ID</li>
+        <li>Хранение истории</li>
+      </ul>
+    </div>
+
+    <div class="col-box">
+      <h3>📊 Аналитика</h3>
+      <ul style="font-size: 22px; margin-left: 30px;">
+        <li>Общая сумма продаж</li>
+        <li>Топ-5 товаров</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="slide-number">4 / 7</div>
+</div>
+
+<!-- ========== СЛАЙД 5 ========== -->
+<div class="slide">
+  <h2>Демонстрация работы</h2>
+
+  <p>Запуск приложения:</p>
+  <div class="code-block">$ cd ~/SportShop1
+$ python3 main.py</div>
+
+  <p>Главное меню:</p>
+  <div class="code-block">=== СПОРТТОВАРЫ ===
+1. Каталог
+2. В корзину
+3. Оформить заказ
+4. Аналитика
+5. Выход
+Выбор:</div>
+
+  <p><b>Пример работы:</b></p>
+  <ul>
+    <li>Пункт 1 — вывод 5 товаров каталога</li>
+    <li>Пункт 2 — добавление товара в корзину</li>
+    <li>Пункт 3 — оформление заказа на сумму</li>
+    <li>Пункт 4 — общая сумма продаж</li>
+  </ul>
+
+  <div class="slide-number">5 / 7</div>
+</div>
+
+<!-- ========== СЛАЙД 6 ========== -->
+<div class="slide">
+  <h2>Результаты тестирования</h2>
+
+  <p>Команда:</p>
+  <div class="code-block">$ python3 -m unittest discover -s tests -v</div>
+
+  <table>
+    <tr><th>Модуль</th><th>Тестов</th><th>Пройдено</th><th>Провалено</th></tr>
+    <tr><td>catalog.py</td><td>5</td><td>5</td><td>0</td></tr>
+    <tr><td>cart.py</td><td>4</td><td>4</td><td>0</td></tr>
+    <tr><td>orders.py</td><td>3</td><td>3</td><td>0</td></tr>
+    <tr><td>analytics.py</td><td>3</td><td>3</td><td>0</td></tr>
+    <tr><td>storage.py</td><td>2</td><td>2</td><td>0</td></tr>
+    <tr><td><b>Итого</b></td><td><b>17</b></td><td><b>17</b></td><td><b>0</b></td></tr>
+  </table>
+
+  <p style="text-align: center; font-size: 32px; color: #2e7d32; font-weight: bold; margin-top: 30px;">
+    ✅ Все тесты пройдены — OK
+  </p>
+
+  <div class="slide-number">6 / 7</div>
+</div>
+
+<!-- ========== СЛАЙД 7 ========== -->
+<div class="slide">
+  <h2>Выводы и планы</h2>
+
+  <h3>Выводы</h3>
+  <ul>
+    <li>Приложение «СпортТовары» полностью реализовано</li>
+    <li>Все 17 тестов пройдены успешно</li>
+    <li>Документация оформлена (README, API, руководства)</li>
+    <li>Создан релиз <b>v1.0</b> в Git</li>
+  </ul>
+
+  <h3>Планы на будущее</h3>
+  <ul>
+    <li>Добавить GUI (Tkinter / PyQt)</li>
+    <li>Подключить веб-интерфейс (Flask)</li>
+    <li>Расширить аналитику (графики, отчёты)</li>
+    <li>Добавить экспорт в Excel / PDF</li>
+  </ul>
+
+  <p style="text-align: center; font-size: 30px; color: #1b5e20; font-weight: bold; margin-top: 40px;">
+    Спасибо за внимание! 🙌
+  </p>
+
+  <div class="slide-number">7 / 7</div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const progress = document.getElementById('progress');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+    current = index;
+    progress.style.width = ((index + 1) / slides.length * 100) + '%';
+  }
+
+  function nextSlide() {
+    if (current < slides.length - 1) showSlide(current + 1);
+  }
+
+  function prevSlide() {
+    if (current > 0) showSlide(current - 1);
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault();
+      nextSlide();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      prevSlide();
+    } else if (e.key === 'Home') {
+      showSlide(0);
+    } else if (e.key === 'End') {
+      showSlide(slides.length - 1);
+    } else if (e.key === 'f' || e.key === 'F') {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.slide')) {
+      nextSlide();
+    }
+  });
+
+  showSlide(0);
+</script>
+
+</body>
+</html>
