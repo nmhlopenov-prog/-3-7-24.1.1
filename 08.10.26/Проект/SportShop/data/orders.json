@@ -1,0 +1,15 @@
+[
+  {
+    "client": "Иван Иванов",
+    "items": [
+      {
+        "id": 1,
+        "name": "Кроссовки Nike Air",
+        "price": 8990,
+        "size": "40",
+        "quantity": 2
+      }
+    ],
+    "total": 17980
+  }
+]
