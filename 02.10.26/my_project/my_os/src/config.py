@@ -1,0 +1,4 @@
+DB_PATH = "db/os.sqlite"
+MAX_PROCESSES = 10
+MAX_MEMORY = 1024
+HASH_ALGO = "sha256"
