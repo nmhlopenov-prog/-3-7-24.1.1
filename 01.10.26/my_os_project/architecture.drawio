@@ -1,0 +1,73 @@
+<mxfile host="65bd71144e">
+    <diagram id="-hLAx4uJXFv12-RfM_5w" name="Page-1">
+        <mxGraphModel dx="636" dy="522" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;pre&gt;&lt;span&gt;USER SPACE&lt;/span&gt;&lt;/pre&gt;&lt;pre&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/pre&gt;&lt;pre&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/pre&gt;&lt;pre&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/pre&gt;&lt;pre&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/pre&gt;&lt;pre&gt;syscalls&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="200" width="480" x="80" y="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgba(121, 121, 121, 0.4) rgb(31, 31, 31);&quot;&gt;shell.py&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="80" width="120" x="120" y="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;user program&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="80" width="120" x="400" y="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;pre&gt;KERNEL SPACE&lt;/pre&gt;&lt;pre&gt;&lt;span&gt;&lt;br&gt;&lt;/span&gt;&lt;/pre&gt;&lt;pre&gt;&lt;br&gt;&lt;/pre&gt;&lt;pre&gt;syscalls&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="280" width="480" x="80" y="320" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-20" edge="1" parent="1" source="C3Y_m45zLcxSLanFnnjl-5" style="edgeStyle=none;html=1;" target="C3Y_m45zLcxSLanFnnjl-7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgba(121, 121, 121, 0.4) rgb(31, 31, 31);&quot;&gt;&lt;pre&gt;scheduler&lt;/pre&gt;&lt;pre&gt;(FCFS, RR,&lt;/pre&gt;&lt;pre&gt;Priority)&lt;/pre&gt;&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="80" width="120" x="120" y="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-21" edge="1" parent="1" source="C3Y_m45zLcxSLanFnnjl-6" style="edgeStyle=none;html=1;" target="C3Y_m45zLcxSLanFnnjl-8">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;memory manager&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="80" width="120" x="400" y="330" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-17" edge="1" parent="1" source="C3Y_m45zLcxSLanFnnjl-7" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="C3Y_m45zLcxSLanFnnjl-9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgba(121, 121, 121, 0.4) rgb(31, 31, 31);&quot;&gt;&lt;pre&gt;fs&lt;/pre&gt;&lt;pre&gt;(Файловая &lt;/pre&gt;&lt;pre&gt;система)&lt;/pre&gt;&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="80" width="120" x="120" y="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-19" edge="1" parent="1" source="C3Y_m45zLcxSLanFnnjl-8" style="edgeStyle=none;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;exitX=0.45;exitY=1.013;exitDx=0;exitDy=0;exitPerimeter=0;" target="C3Y_m45zLcxSLanFnnjl-9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;auth&lt;/pre&gt;&lt;pre&gt;(SHA-256)&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="80" width="120" x="400" y="430" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-16" edge="1" parent="1" source="C3Y_m45zLcxSLanFnnjl-9" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="C3Y_m45zLcxSLanFnnjl-10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre style=&quot;color: rgb(63, 63, 63); scrollbar-color: rgba(121, 121, 121, 0.4) rgb(31, 31, 31);&quot;&gt;&lt;pre&gt;syscalls.py&lt;/pre&gt;&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="80" width="120" x="260" y="510" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-10" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;pre&gt;SQLite&lt;/pre&gt;&lt;pre&gt;&lt;br&gt;&lt;/pre&gt;&lt;pre&gt;&lt;br&gt;&lt;/pre&gt;&lt;pre&gt;&lt;br&gt;&lt;/pre&gt;&lt;pre&gt;&lt;br&gt;&lt;/pre&gt;&lt;pre&gt;&lt;br&gt;&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="160" width="480" x="80" y="640" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;users&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="100" width="100" x="105" y="690" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;processes&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="100" width="100" x="215" y="690" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-13" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;files&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="100" width="100" x="325" y="690" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="&lt;pre&gt;syscalls_log&lt;/pre&gt;" vertex="1">
+                    <mxGeometry height="100" width="100" x="435" y="690" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-22" edge="1" parent="1" source="C3Y_m45zLcxSLanFnnjl-2" style="edgeStyle=none;html=1;entryX=0.208;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="C3Y_m45zLcxSLanFnnjl-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="C3Y_m45zLcxSLanFnnjl-23" edge="1" parent="1" source="C3Y_m45zLcxSLanFnnjl-3" style="edgeStyle=none;html=1;entryX=0.794;entryY=0.004;entryDx=0;entryDy=0;entryPerimeter=0;" target="C3Y_m45zLcxSLanFnnjl-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
